@@ -1,11 +1,9 @@
+
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
     background-color: #000;
-    background-image: url('path/to/your-background.jpg');
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 header {
@@ -59,26 +57,23 @@ nav a:hover {
     top: 20px;
 }
 
+/* Music Section */
 .music {
     padding: 50px 20px;
     text-align: center;
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(orange, red);
     margin: 20px auto;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content */
 }
 
 .music h1 {
     font-size: 48px;
     margin-bottom: 40px;
-}
-
-.album-section, .singles-section {
-    margin-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .album-container, .single-container {
@@ -118,7 +113,6 @@ nav a:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
     border: 1px solid #444;
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -134,9 +128,7 @@ nav a:hover {
     color: #ff5722;
     flex-grow: 1;
 }
-.single{
-    padding: 20px;
-}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
@@ -156,28 +148,52 @@ nav a:hover {
         display: block;
     }
 
-    .music h1 {
-        font-size: 36px;
-    }
-
-    .track-title {
-        font-size: 18px;
+    .music {
+        padding: 20px;
+        width: calc(100% - 40px);
+        box-sizing: border-box;
     }
 
     .album-container, .single-container {
         flex-direction: column;
     }
 
-    .single-container .single {
-        margin-bottom: 40px;
+    .album-cover img, .single .album-cover img {
+        max-width: 250px;
+    }
+
+    .tracks .track-list {
+        max-width: 90%;
+    }
+
+    .track {
+        padding: 5px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .track-title {
+        font-size: 16px;
+        margin-left: 0;
+        margin-top: 5px;
     }
 }
-.music{
-    background: linear-gradient(orange,red)
+
+@media (max-width: 480px) {
+    .music h1 {
+        font-size: 36px;
+    }
+
+    .track-title {
+        font-size: 14px;
+    }
 }
+
 footer {
-    background-color: #ff5722; /* Orangish background */
-    color: #000; /* Black text */
+    background-color: #ff5722;
+    color: #000;
     text-align: center;
     padding: 10px 0;
     width: 100%;
